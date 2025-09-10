@@ -1,0 +1,139 @@
+.Ti{
+  font-size: 54px;
+  font-weight: bold;
+ position:absolute;
+ top:0px;
+    left:50%;
+    margin:0;
+    transform:translateX(-50%);
+ 
+ 
+  color: #fff;
+  
+ 
+}
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(735deg, #0894f0, #db5705, #f0e209, #0894f0);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.player {
+  width: 340px;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.5);
+}
+
+/* Album Art */
+.album-art {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #f39c12;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  animation: rotate 8s linear infinite;
+  animation-play-state: paused;
+}
+.album-art img.playing {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.player-details h2 {
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+.player-details h3 {
+  font-size: 16px;
+  font-weight: 300;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.controls button {
+  background: #fff;
+  border: none;
+  color: #333;
+  font-size: 20px;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.controls button:hover {
+  background: #f39c12;
+  color: #fff;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: #444;
+  margin: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background: #f39c12;
+  border-radius: 3px;
+}
+
+.volume-control {
+  margin: 15px 0;
+}
+.volume-control input {
+  width: 100px;
+}
+
+.playlist {
+  text-align: left;
+  margin-top: 15px;
+  max-height: 120px;
+  overflow-y: auto;
+}
+.playlist ul {
+  list-style: none;
+  padding: 0;
+}
+.playlist li {
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.playlist li:hover {
+  background: rgba(255,255,255,0.1);
+}
+.playlist li.active {
+  background: #f39c12;
+}

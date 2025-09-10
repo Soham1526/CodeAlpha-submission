@@ -1,0 +1,106 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #0033CC;
+    }
+h1{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+    margin-bottom: 20px;
+    }
+
+    
+    .filter-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-btns button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #03094b;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btns button:hover {
+      background: #555;
+    }
+
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: solid;
+      box-shadow:-1px -3px 10px 5px rgba(13, 13, 13, 0.7);
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+    }
+
+   
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .lightbox .close, 
+    .lightbox .prev, 
+    .lightbox .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 50%;
+    }
+
+    .lightbox .close {
+      top: 30px;
+      right: 30px;
+      transform: none;
+    }
+
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
+
+    @media (max-width: 600px) {
+      
+      .gallery img { height: 150px; }
+      .lightbox .close { font-size: 1.5rem; }
+    }
+ 
